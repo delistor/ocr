@@ -1,0 +1,74 @@
+{
+    "_说明": "===================================================================================",
+    "_说明1": "OCR 工作流全局配置 — 每个模块独立开关",
+    "_说明2": "enabled: true/false    — 是否启用该模块",
+    "_说明3": "model_dir: 'auto'      — 自动发现当前目录下匹配的 ONNX 模型目录",
+    "_说明4": "model_dir: '<路径>'    — 手动指定模型目录",
+    "_说明5": "",
+    "_说明6": "工作流顺序:",
+    "_说明7": "  1. 文档方向分类 → 2. 文档畸变校正 → 3. 版面分析(含表格检测)",
+    "_说明8": "  → 4. 文本检测 → 5. 文字行方向 → 6. 文本识别",
+    "_说明9": "  → 7. 表格类型分类 → 8. 表格结构识别 → 9. 表格单元格检测",
+    "_说明10": "==================================================================================",
+
+    "engine": "onnxruntime",
+
+    "text_detection": {
+        "enabled": true,
+        "model_dir": "auto"
+    },
+
+    "text_recognition": {
+        "enabled": true,
+        "model_dir": "auto"
+    },
+
+    "textline_orientation": {
+        "enabled": true,
+        "model_dir": "auto"
+    },
+
+    "doc_orientation_classify": {
+        "enabled": true,
+        "model_dir": "auto"
+    },
+
+    "doc_unwarping": {
+        "enabled": true,
+        "model_dir": "auto"
+    },
+
+    "doc_layout": {
+        "enabled": true,
+        "model_dir": "auto"
+    },
+
+    "table_cls": {
+        "enabled": true,
+        "model_dir": "auto"
+    },
+
+    "table_structure": {
+        "enabled": true,
+        "model_dir": "auto"
+    },
+
+    "table_cell_det_wired": {
+        "enabled": true,
+        "model_dir": "auto"
+    },
+    "table_cell_det_wireless": {
+        "enabled": true,
+        "model_dir": "auto"
+    },
+
+    "font": {
+        "path": "auto",
+        "size": 18,
+        "color": [255, 0, 0]
+    },
+
+    "draw_detection_boxes": true,
+    "box_color": [0, 255, 0],
+    "box_thickness": 2
+}
